@@ -1,0 +1,794 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
+  <mtl:Module name="tableCQLFile" nsURI="net::fwd::m2t::files::tableCQLFile" startHeaderPosition="29" endHeaderPosition="185">
+    <input>
+      <takesTypesFrom href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#/"/>
+    </input>
+    <ownedModuleElement xsi:type="mtl:Template" name="genTableCQLFile" visibility="Public">
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="CREATE TABLE "/>
+      <body xsi:type="ocl.ecore:PropertyCallExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <source xsi:type="ocl.ecore:VariableExp" name="aTable" referredVariable="/0/genTableCQLFile/aTable">
+          <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Table"/>
+        </source>
+        <referredProperty xsi:type="ecore:EAttribute" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Table/name"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" (&#xA;"/>
+      <body xsi:type="mtl:ForBlock">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="  "/>
+        <body xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="pk" referredVariable="/0/genTableCQLFile/%.3/pk">
+            <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Column"/>
+          </source>
+          <referredProperty xsi:type="ecore:EAttribute" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Column/name"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" "/>
+        <body xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="pk" referredVariable="/0/genTableCQLFile/%.3/pk">
+            <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Column"/>
+          </source>
+          <referredProperty xsi:type="ecore:EAttribute" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Column/dataType"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=",&#xA;"/>
+        <loopVariable name="pk">
+          <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Column"/>
+        </loopVariable>
+        <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/7/OrderedSet(Column)">
+          <source xsi:type="ocl.ecore:VariableExp" name="aTable" referredVariable="/0/genTableCQLFile/aTable">
+            <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Table"/>
+          </source>
+          <referredProperty xsi:type="ecore:EReference" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Table/partitionKey"/>
+        </iterSet>
+      </body>
+      <body xsi:type="mtl:ForBlock">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="  "/>
+        <body xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="cc" referredVariable="/0/genTableCQLFile/%.4/cc">
+            <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Column"/>
+          </source>
+          <referredProperty xsi:type="ecore:EAttribute" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Column/name"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" "/>
+        <body xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="cc" referredVariable="/0/genTableCQLFile/%.4/cc">
+            <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Column"/>
+          </source>
+          <referredProperty xsi:type="ecore:EAttribute" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Column/dataType"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=",&#xA;"/>
+        <loopVariable name="cc">
+          <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Column"/>
+        </loopVariable>
+        <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/7/OrderedSet(Column)">
+          <source xsi:type="ocl.ecore:VariableExp" name="aTable" referredVariable="/0/genTableCQLFile/aTable">
+            <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Table"/>
+          </source>
+          <referredProperty xsi:type="ecore:EReference" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Table/clusteringColumn"/>
+        </iterSet>
+      </body>
+      <body xsi:type="mtl:ForBlock">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="  "/>
+        <body xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="oc" referredVariable="/0/genTableCQLFile/%.5/oc">
+            <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Column"/>
+          </source>
+          <referredProperty xsi:type="ecore:EAttribute" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Column/name"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" "/>
+        <body xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="oc" referredVariable="/0/genTableCQLFile/%.5/oc">
+            <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Column"/>
+          </source>
+          <referredProperty xsi:type="ecore:EAttribute" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Column/dataType"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=",&#xA;"/>
+        <loopVariable name="oc">
+          <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Column"/>
+        </loopVariable>
+        <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/7/OrderedSet(Column)">
+          <source xsi:type="ocl.ecore:VariableExp" name="aTable" referredVariable="/0/genTableCQLFile/aTable">
+            <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Table"/>
+          </source>
+          <referredProperty xsi:type="ecore:EReference" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Table/otherColumn"/>
+        </iterSet>
+      </body>
+      <body xsi:type="mtl:ForBlock">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="  "/>
+        <body xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="ic" referredVariable="/0/genTableCQLFile/%.6/ic">
+            <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Column"/>
+          </source>
+          <referredProperty xsi:type="ecore:EAttribute" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Column/name"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" "/>
+        <body xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="ic" referredVariable="/0/genTableCQLFile/%.6/ic">
+            <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Column"/>
+          </source>
+          <referredProperty xsi:type="ecore:EAttribute" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Column/dataType"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=",&#xA;"/>
+        <loopVariable name="ic">
+          <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Column"/>
+        </loopVariable>
+        <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/7/OrderedSet(Column)">
+          <source xsi:type="ocl.ecore:VariableExp" name="aTable" referredVariable="/0/genTableCQLFile/aTable">
+            <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Table"/>
+          </source>
+          <referredProperty xsi:type="ecore:EReference" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Table/indexedColumn"/>
+        </iterSet>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="  PRIMARY KEY ("/>
+      <body xsi:type="mtl:ForBlock">
+        <body xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="pk" referredVariable="/0/genTableCQLFile/%.8/pk">
+            <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Column"/>
+          </source>
+          <referredProperty xsi:type="ecore:EAttribute" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Column/name"/>
+        </body>
+        <loopVariable name="pk">
+          <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Column"/>
+        </loopVariable>
+        <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/7/OrderedSet(Column)">
+          <source xsi:type="ocl.ecore:VariableExp" name="aTable" referredVariable="/0/genTableCQLFile/aTable">
+            <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Table"/>
+          </source>
+          <referredProperty xsi:type="ecore:EReference" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Table/partitionKey"/>
+        </iterSet>
+        <each xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=", ">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </each>
+      </body>
+      <body xsi:type="mtl:ForBlock">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=", "/>
+        <body xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="cc" referredVariable="/0/genTableCQLFile/%.9/cc">
+            <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Column"/>
+          </source>
+          <referredProperty xsi:type="ecore:EAttribute" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Column/name"/>
+        </body>
+        <loopVariable name="cc">
+          <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Column"/>
+        </loopVariable>
+        <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/7/OrderedSet(Column)">
+          <source xsi:type="ocl.ecore:VariableExp" name="aTable" referredVariable="/0/genTableCQLFile/aTable">
+            <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Table"/>
+          </source>
+          <referredProperty xsi:type="ecore:EReference" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Table/clusteringColumn"/>
+        </iterSet>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=")&#xA;);&#xA;"/>
+      <body xsi:type="mtl:ForBlock">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;CREATE INDEX ON "/>
+        <body xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="aTable" referredVariable="/0/genTableCQLFile/aTable">
+            <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Table"/>
+          </source>
+          <referredProperty xsi:type="ecore:EAttribute" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Table/name"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" ("/>
+        <body xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="ic" referredVariable="/0/genTableCQLFile/%.11/ic">
+            <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Column"/>
+          </source>
+          <referredProperty xsi:type="ecore:EAttribute" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Column/name"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=");&#xA;"/>
+        <loopVariable name="ic">
+          <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Column"/>
+        </loopVariable>
+        <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/7/OrderedSet(Column)">
+          <source xsi:type="ocl.ecore:VariableExp" name="aTable" referredVariable="/0/genTableCQLFile/aTable">
+            <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Table"/>
+          </source>
+          <referredProperty xsi:type="ecore:EReference" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Table/indexedColumn"/>
+        </iterSet>
+      </body>
+      <parameter name="aTable">
+        <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Table"/>
+      </parameter>
+    </ownedModuleElement>
+  </mtl:Module>
+  <ecore:EPackage name="additions">
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_String_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Integer_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Real_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Real"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ecore_EObject_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      </eAnnotations>
+      <eOperations name="genTableCQLFile">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/genTableCQLFile"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aTable">
+          <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Table"/>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_OclAny_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Collection(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Collection(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Sequence(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_OrderedSet(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Cassandra_Table_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Table"/>
+      </eAnnotations>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Table"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Table"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Table"/>
+  </ocl.ecore:Variable>
+  <ecore:EPackage name="collections">
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Column)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Column"/>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Table"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Column"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Column"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Column"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Table"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Table"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Column"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Column"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Column"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Table"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Table"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Column"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Column"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Column"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Table"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Table"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Column"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Column"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Column"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Table"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Table"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Table"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Column"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Column"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Table"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Table"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Column"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Column"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Table"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Table"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Column"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Column"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Column"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="/ClassDiagram2Cassandra/Metamodels/Cassandra2t.ecore#//Table"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ecore:EAnnotation source="positions">
+    <eAnnotations source="positions.0" references="/0/genTableCQLFile">
+      <details key="start" value="110"/>
+      <details key="end" value="785"/>
+      <details key="line" value="6"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1" references="/0/genTableCQLFile/%">
+      <details key="start" value="160"/>
+      <details key="end" value="173"/>
+      <details key="line" value="7"/>
+    </eAnnotations>
+    <eAnnotations source="positions.2" references="/0/genTableCQLFile/%.1">
+      <details key="start" value="174"/>
+      <details key="end" value="185"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.3" references="/0/genTableCQLFile/%.1/aTable">
+      <details key="start" value="174"/>
+      <details key="end" value="180"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.4" references="/0/genTableCQLFile/%.2">
+      <details key="start" value="187"/>
+      <details key="end" value="190"/>
+      <details key="line" value="7"/>
+    </eAnnotations>
+    <eAnnotations source="positions.5" references="/0/genTableCQLFile/%.3">
+      <details key="start" value="192"/>
+      <details key="end" value="271"/>
+      <details key="line" value="8"/>
+    </eAnnotations>
+    <eAnnotations source="positions.6" references="/0/genTableCQLFile/%.3/%">
+      <details key="start" value="234"/>
+      <details key="end" value="236"/>
+      <details key="line" value="9"/>
+    </eAnnotations>
+    <eAnnotations source="positions.7" references="/0/genTableCQLFile/%.3/%.1">
+      <details key="start" value="237"/>
+      <details key="end" value="244"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.8" references="/0/genTableCQLFile/%.3/%.1/pk">
+      <details key="start" value="237"/>
+      <details key="end" value="239"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.9" references="/0/genTableCQLFile/%.3/%.2">
+      <details key="start" value="246"/>
+      <details key="end" value="247"/>
+      <details key="line" value="9"/>
+    </eAnnotations>
+    <eAnnotations source="positions.10" references="/0/genTableCQLFile/%.3/%.3">
+      <details key="start" value="248"/>
+      <details key="end" value="259"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.11" references="/0/genTableCQLFile/%.3/%.3/pk">
+      <details key="start" value="248"/>
+      <details key="end" value="250"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.12" references="/0/genTableCQLFile/%.3/%.4">
+      <details key="start" value="261"/>
+      <details key="end" value="263"/>
+      <details key="line" value="9"/>
+    </eAnnotations>
+    <eAnnotations source="positions.13" references="/0/genTableCQLFile/%.3/pk">
+      <details key="start" value="198"/>
+      <details key="end" value="209"/>
+      <details key="line" value="8"/>
+    </eAnnotations>
+    <eAnnotations source="positions.14" references="/0/genTableCQLFile/%.3/%.5">
+      <details key="start" value="212"/>
+      <details key="end" value="231"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.15" references="/0/genTableCQLFile/%.3/%.5/aTable">
+      <details key="start" value="212"/>
+      <details key="end" value="218"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.16" references="/0/genTableCQLFile/%.4">
+      <details key="start" value="274"/>
+      <details key="end" value="357"/>
+      <details key="line" value="11"/>
+    </eAnnotations>
+    <eAnnotations source="positions.17" references="/0/genTableCQLFile/%.4/%">
+      <details key="start" value="320"/>
+      <details key="end" value="322"/>
+      <details key="line" value="12"/>
+    </eAnnotations>
+    <eAnnotations source="positions.18" references="/0/genTableCQLFile/%.4/%.1">
+      <details key="start" value="323"/>
+      <details key="end" value="330"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.19" references="/0/genTableCQLFile/%.4/%.1/cc">
+      <details key="start" value="323"/>
+      <details key="end" value="325"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.20" references="/0/genTableCQLFile/%.4/%.2">
+      <details key="start" value="332"/>
+      <details key="end" value="333"/>
+      <details key="line" value="12"/>
+    </eAnnotations>
+    <eAnnotations source="positions.21" references="/0/genTableCQLFile/%.4/%.3">
+      <details key="start" value="334"/>
+      <details key="end" value="345"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.22" references="/0/genTableCQLFile/%.4/%.3/cc">
+      <details key="start" value="334"/>
+      <details key="end" value="336"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.23" references="/0/genTableCQLFile/%.4/%.4">
+      <details key="start" value="347"/>
+      <details key="end" value="349"/>
+      <details key="line" value="12"/>
+    </eAnnotations>
+    <eAnnotations source="positions.24" references="/0/genTableCQLFile/%.4/cc">
+      <details key="start" value="280"/>
+      <details key="end" value="291"/>
+      <details key="line" value="11"/>
+    </eAnnotations>
+    <eAnnotations source="positions.25" references="/0/genTableCQLFile/%.4/%.5">
+      <details key="start" value="294"/>
+      <details key="end" value="317"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.26" references="/0/genTableCQLFile/%.4/%.5/aTable">
+      <details key="start" value="294"/>
+      <details key="end" value="300"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.27" references="/0/genTableCQLFile/%.5">
+      <details key="start" value="360"/>
+      <details key="end" value="438"/>
+      <details key="line" value="14"/>
+    </eAnnotations>
+    <eAnnotations source="positions.28" references="/0/genTableCQLFile/%.5/%">
+      <details key="start" value="401"/>
+      <details key="end" value="403"/>
+      <details key="line" value="15"/>
+    </eAnnotations>
+    <eAnnotations source="positions.29" references="/0/genTableCQLFile/%.5/%.1">
+      <details key="start" value="404"/>
+      <details key="end" value="411"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.30" references="/0/genTableCQLFile/%.5/%.1/oc">
+      <details key="start" value="404"/>
+      <details key="end" value="406"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.31" references="/0/genTableCQLFile/%.5/%.2">
+      <details key="start" value="413"/>
+      <details key="end" value="414"/>
+      <details key="line" value="15"/>
+    </eAnnotations>
+    <eAnnotations source="positions.32" references="/0/genTableCQLFile/%.5/%.3">
+      <details key="start" value="415"/>
+      <details key="end" value="426"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.33" references="/0/genTableCQLFile/%.5/%.3/oc">
+      <details key="start" value="415"/>
+      <details key="end" value="417"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.34" references="/0/genTableCQLFile/%.5/%.4">
+      <details key="start" value="428"/>
+      <details key="end" value="430"/>
+      <details key="line" value="15"/>
+    </eAnnotations>
+    <eAnnotations source="positions.35" references="/0/genTableCQLFile/%.5/oc">
+      <details key="start" value="366"/>
+      <details key="end" value="377"/>
+      <details key="line" value="14"/>
+    </eAnnotations>
+    <eAnnotations source="positions.36" references="/0/genTableCQLFile/%.5/%.5">
+      <details key="start" value="380"/>
+      <details key="end" value="398"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.37" references="/0/genTableCQLFile/%.5/%.5/aTable">
+      <details key="start" value="380"/>
+      <details key="end" value="386"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.38" references="/0/genTableCQLFile/%.6">
+      <details key="start" value="441"/>
+      <details key="end" value="521"/>
+      <details key="line" value="17"/>
+    </eAnnotations>
+    <eAnnotations source="positions.39" references="/0/genTableCQLFile/%.6/%">
+      <details key="start" value="484"/>
+      <details key="end" value="486"/>
+      <details key="line" value="18"/>
+    </eAnnotations>
+    <eAnnotations source="positions.40" references="/0/genTableCQLFile/%.6/%.1">
+      <details key="start" value="487"/>
+      <details key="end" value="494"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.41" references="/0/genTableCQLFile/%.6/%.1/ic">
+      <details key="start" value="487"/>
+      <details key="end" value="489"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.42" references="/0/genTableCQLFile/%.6/%.2">
+      <details key="start" value="496"/>
+      <details key="end" value="497"/>
+      <details key="line" value="18"/>
+    </eAnnotations>
+    <eAnnotations source="positions.43" references="/0/genTableCQLFile/%.6/%.3">
+      <details key="start" value="498"/>
+      <details key="end" value="509"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.44" references="/0/genTableCQLFile/%.6/%.3/ic">
+      <details key="start" value="498"/>
+      <details key="end" value="500"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.45" references="/0/genTableCQLFile/%.6/%.4">
+      <details key="start" value="511"/>
+      <details key="end" value="513"/>
+      <details key="line" value="18"/>
+    </eAnnotations>
+    <eAnnotations source="positions.46" references="/0/genTableCQLFile/%.6/ic">
+      <details key="start" value="447"/>
+      <details key="end" value="458"/>
+      <details key="line" value="17"/>
+    </eAnnotations>
+    <eAnnotations source="positions.47" references="/0/genTableCQLFile/%.6/%.5">
+      <details key="start" value="461"/>
+      <details key="end" value="481"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.48" references="/0/genTableCQLFile/%.6/%.5/aTable">
+      <details key="start" value="461"/>
+      <details key="end" value="467"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.49" references="/0/genTableCQLFile/%.7">
+      <details key="start" value="522"/>
+      <details key="end" value="537"/>
+      <details key="line" value="20"/>
+    </eAnnotations>
+    <eAnnotations source="positions.50" references="/0/genTableCQLFile/%.8">
+      <details key="start" value="537"/>
+      <details key="end" value="610"/>
+      <details key="line" value="20"/>
+    </eAnnotations>
+    <eAnnotations source="positions.51" references="/0/genTableCQLFile/%.8/%">
+      <details key="start" value="595"/>
+      <details key="end" value="602"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.52" references="/0/genTableCQLFile/%.8/%/pk">
+      <details key="start" value="595"/>
+      <details key="end" value="597"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.53" references="/0/genTableCQLFile/%.8/pk">
+      <details key="start" value="543"/>
+      <details key="end" value="554"/>
+      <details key="line" value="20"/>
+    </eAnnotations>
+    <eAnnotations source="positions.54" references="/0/genTableCQLFile/%.8/%.1">
+      <details key="start" value="557"/>
+      <details key="end" value="576"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.55" references="/0/genTableCQLFile/%.8/%.1/aTable">
+      <details key="start" value="557"/>
+      <details key="end" value="563"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.56" references="/0/genTableCQLFile/%.8/%.2">
+      <details key="start" value="588"/>
+      <details key="end" value="592"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.57" references="/0/genTableCQLFile/%.9">
+      <details key="start" value="610"/>
+      <details key="end" value="673"/>
+      <details key="line" value="20"/>
+    </eAnnotations>
+    <eAnnotations source="positions.58" references="/0/genTableCQLFile/%.9/%">
+      <details key="start" value="655"/>
+      <details key="end" value="657"/>
+      <details key="line" value="20"/>
+    </eAnnotations>
+    <eAnnotations source="positions.59" references="/0/genTableCQLFile/%.9/%.1">
+      <details key="start" value="658"/>
+      <details key="end" value="665"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.60" references="/0/genTableCQLFile/%.9/%.1/cc">
+      <details key="start" value="658"/>
+      <details key="end" value="660"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.61" references="/0/genTableCQLFile/%.9/cc">
+      <details key="start" value="616"/>
+      <details key="end" value="627"/>
+      <details key="line" value="20"/>
+    </eAnnotations>
+    <eAnnotations source="positions.62" references="/0/genTableCQLFile/%.9/%.2">
+      <details key="start" value="630"/>
+      <details key="end" value="653"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.63" references="/0/genTableCQLFile/%.9/%.2/aTable">
+      <details key="start" value="630"/>
+      <details key="end" value="636"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.64" references="/0/genTableCQLFile/%.10">
+      <details key="start" value="673"/>
+      <details key="end" value="678"/>
+      <details key="line" value="20"/>
+    </eAnnotations>
+    <eAnnotations source="positions.65" references="/0/genTableCQLFile/%.11">
+      <details key="start" value="678"/>
+      <details key="end" value="773"/>
+      <details key="line" value="22"/>
+    </eAnnotations>
+    <eAnnotations source="positions.66" references="/0/genTableCQLFile/%.11/%">
+      <details key="start" value="721"/>
+      <details key="end" value="738"/>
+      <details key="line" value="23"/>
+    </eAnnotations>
+    <eAnnotations source="positions.67" references="/0/genTableCQLFile/%.11/%.1">
+      <details key="start" value="739"/>
+      <details key="end" value="750"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.68" references="/0/genTableCQLFile/%.11/%.1/aTable">
+      <details key="start" value="739"/>
+      <details key="end" value="745"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.69" references="/0/genTableCQLFile/%.11/%.2">
+      <details key="start" value="752"/>
+      <details key="end" value="754"/>
+      <details key="line" value="24"/>
+    </eAnnotations>
+    <eAnnotations source="positions.70" references="/0/genTableCQLFile/%.11/%.3">
+      <details key="start" value="755"/>
+      <details key="end" value="762"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.71" references="/0/genTableCQLFile/%.11/%.3/ic">
+      <details key="start" value="755"/>
+      <details key="end" value="757"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.72" references="/0/genTableCQLFile/%.11/%.4">
+      <details key="start" value="764"/>
+      <details key="end" value="767"/>
+      <details key="line" value="24"/>
+    </eAnnotations>
+    <eAnnotations source="positions.73" references="/0/genTableCQLFile/%.11/ic">
+      <details key="start" value="684"/>
+      <details key="end" value="695"/>
+      <details key="line" value="22"/>
+    </eAnnotations>
+    <eAnnotations source="positions.74" references="/0/genTableCQLFile/%.11/%.5">
+      <details key="start" value="698"/>
+      <details key="end" value="718"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.75" references="/0/genTableCQLFile/%.11/%.5/aTable">
+      <details key="start" value="698"/>
+      <details key="end" value="704"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.76" references="/0/genTableCQLFile/aTable">
+      <details key="start" value="143"/>
+      <details key="end" value="157"/>
+      <details key="line" value="6"/>
+    </eAnnotations>
+  </ecore:EAnnotation>
+</xmi:XMI>
